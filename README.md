@@ -1,1 +1,1 @@
-# WpfExampleLightStateMachine
+# LightStateMachine
