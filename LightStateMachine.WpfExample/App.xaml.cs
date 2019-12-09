@@ -1,7 +1,7 @@
-﻿using System.Windows;
-
-namespace WpfExampleLightStateMachine
+﻿namespace LightStateMachine.WpfExample
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

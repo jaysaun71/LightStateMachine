@@ -1,11 +1,16 @@
-﻿<Window x:Class="WpfExampleLightStateMachine.MainWindow"
+﻿<Window x:Class="LightStateMachine.WpfExample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left">
+            <Button Command="{Binding LoadFirstPageCommand}" Width="100" Height="100" Content="First"/>
+            <Button Command="{Binding LoadSecondPageCommand}" Width="100" Height="100" Content="Second"/>
+            <Label Content="{Binding PageTitle}" Width="100" Height="100" />
+        </StackPanel>
+        <ContentControl Content="{Binding Path=CurrentViewModel}" />
+    </DockPanel>
 </Window>

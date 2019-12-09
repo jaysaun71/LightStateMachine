@@ -1,7 +1,7 @@
-﻿using System.Windows;
-
-namespace WpfExampleLightStateMachine
+﻿namespace LightStateMachine.WpfExample
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -9,6 +9,7 @@ namespace WpfExampleLightStateMachine
     {
         public MainWindow()
         {
+            this.DataContext = new MainWindowViewModel();
             InitializeComponent();
         }
     }
