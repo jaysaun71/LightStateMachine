@@ -119,7 +119,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LightStateMachine\core.lightfsm.csproj">
+    <ProjectReference Include="..\core.lightfsm\core.lightfsm.csproj">
       <Project>{a3bef8b8-9525-4421-9001-07c2e860aafa}</Project>
       <Name>core.lightfsm</Name>
     </ProjectReference>
