@@ -7,19 +7,19 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
-        private ViewModelBase _currentViewModel;
-        private string _pageTitle;
+        private ViewModelBase currentViewModel;
+        private string pageTitle;
 
         public ViewModelBase CurrentViewModel
         {
             get
             {
-                return this._currentViewModel;
+                return this.currentViewModel;
             }
 
             set
             {
-                this._currentViewModel = value;
+                this.currentViewModel = value;
                 this.OnPropertyChanged(nameof(this.CurrentViewModel));
             }
         }
@@ -31,12 +31,12 @@
 
             get
             {
-                return this._pageTitle;
+                return this.pageTitle;
             }
 
             set
             {
-                this._pageTitle = value;
+                this.pageTitle = value;
                 this.OnPropertyChanged(nameof(this.PageTitle));
             }
         }

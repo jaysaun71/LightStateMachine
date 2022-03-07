@@ -169,7 +169,7 @@ namespace LightStateMachine.Classes
         /// </summary>
         public void PerformTransition()
         {
-            int i = ((IConvertible) this.CurrentState).ToInt32(CultureInfo.InvariantCulture);
+            // int i = ((IConvertible) this.CurrentState).ToInt32(CultureInfo.InvariantCulture);
 
             this.PreviousState = this.CurrentState;
 
