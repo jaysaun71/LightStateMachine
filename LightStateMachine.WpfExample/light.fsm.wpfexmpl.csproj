@@ -119,9 +119,9 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LightStateMachine\LightStateMachine.csproj">
+    <ProjectReference Include="..\LightStateMachine\core.lightfsm.csproj">
       <Project>{a3bef8b8-9525-4421-9001-07c2e860aafa}</Project>
-      <Name>LightStateMachine</Name>
+      <Name>core.lightfsm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
