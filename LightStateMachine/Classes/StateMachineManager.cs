@@ -1,4 +1,9 @@
-﻿namespace LightStateMachine.Classes
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+namespace LightStateMachine.Classes
 {
     using System;
     using System.Collections.Generic;
@@ -29,7 +34,7 @@
         private readonly IDictionary<TStateEnum, IStateAction<TStateEnum, TPayload>> statesConfigurationDictionary;
 
         /// <summary>
-        /// The counter.
+        /// The counter is limit of transitions. 
         /// </summary>
         private int counter;
 
