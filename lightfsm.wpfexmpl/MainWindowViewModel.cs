@@ -1,6 +1,7 @@
 ﻿namespace Lightfsm.Wpfexmpl
 {
     using Lightfsm.Wpfexmpl.Classes.DataContext;
+    using Lightfsm.Wpfexmpl.ViewModels;
     using System.Windows.Input;
 
     /// <summary>
@@ -51,17 +52,19 @@
         {
             this.LoadFirstPageCommand = new DelegateCommand(x => this.LoadFirstPage());
             this.LoadSecondPageCommand = new DelegateCommand(x => this.LoadSecondPage());
-            this.CurrentViewModel = new DefaultContext();
+            this.CurrentViewModel = new HomePageViewModel();
         }
 
         private void LoadFirstPage()
         {
             this.PageTitle = "A";
+            this.CurrentViewModel = new HomePageViewModel();
         }
 
         private void LoadSecondPage()
         {
             this.PageTitle = "B";
+            this.CurrentViewModel = new SettingsPageViewModel();
         }
     }
 }
