@@ -47,7 +47,6 @@
 
         public ICommand LoadSecondPageCommand { get; private set; }
 
-
         public MainWindowViewModel()
         {
             this.LoadFirstPageCommand = new DelegateCommand(x => this.LoadFirstPage());

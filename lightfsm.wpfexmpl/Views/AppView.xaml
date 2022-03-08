@@ -33,3 +33,4 @@
         <Button Grid.Row="2" Grid.Column="0" Command="{Binding GoToPreviousCommand}" Content="Show Previous" />
         <Button Grid.Row="3" Grid.Column="0" Command="{Binding GoToNextCommand}" Content="Show Next" />
     </Grid>
+</UserControl>

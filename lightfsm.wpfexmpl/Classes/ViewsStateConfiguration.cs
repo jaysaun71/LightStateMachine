@@ -19,7 +19,7 @@
         /// <summary>
         /// Gets the exit state enum.
         /// </summary>
-        public ApplicationViewsStateEnum StartState => ApplicationViewsStateEnum.SettingsState;
+        public ApplicationViewsStateEnum StartState => ApplicationViewsStateEnum.HomePageState;
 
         /// <summary>
         /// The exit state enum.
@@ -36,9 +36,9 @@
         {
             return new Dictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, object>>
                        {
-                           { ApplicationViewsStateEnum.SettingsState, new HomePageState() },
-                           { ApplicationViewsStateEnum.TransferToLocationState, new SettingsPageState() },
-                           { ApplicationViewsStateEnum.TransferToRemoveableState, new AppPageStateImpl() },
+                           { ApplicationViewsStateEnum.HomePageState, new HomePageState() },
+                           { ApplicationViewsStateEnum.SettingsPageState, new SettingsPageState() },
+                           { ApplicationViewsStateEnum.AppPageState, new AppPageStateImpl() },
                            { ApplicationViewsStateEnum.ExitState, new ExitStateImpl() },
                        };
         }
