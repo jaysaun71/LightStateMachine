@@ -37,6 +37,20 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Reactive, Version=4.3.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.3.2\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +69,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\BackupFilesStateEnum.cs" />
+    <Compile Include="Classes\DataContext\DefaultContext.cs" />
+    <Compile Include="Classes\DataContext\SecondContext.cs" />
+    <Compile Include="Classes\States\CheckVersionStateImpl.cs" />
+    <Compile Include="Classes\States\ExitStateImpl.cs" />
+    <Compile Include="Classes\States\InstallStateImpl.cs" />
+    <Compile Include="Classes\States\PreviousVersionRecoveryStateImpl.cs" />
+    <Compile Include="Classes\States\StateImplBase.cs" />
+    <Compile Include="Classes\DataContext\ThirdContext.cs" />
+    <Compile Include="Classes\ViewDataTemplateSelector.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
@@ -105,10 +129,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LightStateMachine\LightStateMachine.csproj">
+    <ProjectReference Include="..\core.lightfsm\Core.Lightfsm.csproj">
       <Project>{a3bef8b8-9525-4421-9001-07c2e860aafa}</Project>
-      <Name>LightStateMachine</Name>
+      <Name>Core.Lightfsm</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

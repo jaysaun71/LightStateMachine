@@ -1,9 +1,14 @@
-﻿namespace LightStateMachine.Classes
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+namespace Lightfsm.Classes
 {
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using LightStateMachine.Interfaces;
+    using Lightfsm.Interfaces;
 
     /// <summary>
     /// The state manager.
@@ -29,7 +34,7 @@
         private readonly IDictionary<TStateEnum, IStateAction<TStateEnum, TPayload>> statesConfigurationDictionary;
 
         /// <summary>
-        /// The counter.
+        /// The counter is limit of transitions. 
         /// </summary>
         private int counter;
 
@@ -164,7 +169,7 @@
         /// </summary>
         public void PerformTransition()
         {
-            int i = ((IConvertible) this.CurrentState).ToInt32(CultureInfo.InvariantCulture);
+            // int i = ((IConvertible) this.CurrentState).ToInt32(CultureInfo.InvariantCulture);
 
             this.PreviousState = this.CurrentState;
 
