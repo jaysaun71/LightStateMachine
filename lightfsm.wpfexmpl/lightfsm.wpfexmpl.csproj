@@ -69,12 +69,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\ViewsFsm\BackupFilesStateEnum.cs" />
-    <Compile Include="Classes\ViewsFsm\States\CheckVersionStateImpl.cs" />
-    <Compile Include="Classes\ViewsFsm\States\ExitStateImpl.cs" />
-    <Compile Include="Classes\ViewsFsm\States\InstallStateImpl.cs" />
-    <Compile Include="Classes\ViewsFsm\States\PreviousVersionRecoveryStateImpl.cs" />
-    <Compile Include="Classes\ViewsFsm\States\StateImplBase.cs" />
+    <Compile Include="Classes\BackupFilesStateEnum.cs" />
+    <Compile Include="Classes\DataContext\DefaultContext.cs" />
+    <Compile Include="Classes\DataContext\SecondContext.cs" />
+    <Compile Include="Classes\States\CheckVersionStateImpl.cs" />
+    <Compile Include="Classes\States\ExitStateImpl.cs" />
+    <Compile Include="Classes\States\InstallStateImpl.cs" />
+    <Compile Include="Classes\States\PreviousVersionRecoveryStateImpl.cs" />
+    <Compile Include="Classes\States\StateImplBase.cs" />
+    <Compile Include="Classes\DataContext\ThirdContext.cs" />
+    <Compile Include="Classes\ViewDataTemplateSelector.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
@@ -85,7 +89,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\ViewsFsm\ViewsStateConfiguration.cs" />
+    <Compile Include="Classes\ViewsStateConfiguration.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -125,9 +129,9 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\core.lightfsm\core.lightfsm.csproj">
+    <ProjectReference Include="..\core.lightfsm\Core.Lightfsm.csproj">
       <Project>{a3bef8b8-9525-4421-9001-07c2e860aafa}</Project>
-      <Name>core.lightfsm</Name>
+      <Name>Core.Lightfsm</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

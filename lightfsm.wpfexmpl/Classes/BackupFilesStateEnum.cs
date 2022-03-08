@@ -1,4 +1,4 @@
-﻿namespace LightStateMachine.WpfExample.Classes
+﻿namespace Lightfsm.Wpfexmpl.Classes
 {
     /// <summary>
     /// The Backup files states enum.

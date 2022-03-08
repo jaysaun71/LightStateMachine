@@ -1,4 +1,4 @@
-﻿namespace LightStateMachine.Interfaces
+﻿namespace Lightfsm.Interfaces
 {
     using System.Threading.Tasks;
 

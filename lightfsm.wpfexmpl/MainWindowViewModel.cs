@@ -1,5 +1,6 @@
-﻿namespace LightStateMachine.WpfExample
+﻿namespace Lightfsm.Wpfexmpl
 {
+    using Lightfsm.Wpfexmpl.Classes.DataContext;
     using System.Windows.Input;
 
     /// <summary>
@@ -50,6 +51,7 @@
         {
             this.LoadFirstPageCommand = new DelegateCommand(x => this.LoadFirstPage());
             this.LoadSecondPageCommand = new DelegateCommand(x => this.LoadSecondPage());
+            this.CurrentViewModel = new DefaultContext();
         }
 
         private void LoadFirstPage()

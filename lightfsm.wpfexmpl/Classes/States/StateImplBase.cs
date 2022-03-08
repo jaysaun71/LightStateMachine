@@ -1,8 +1,7 @@
-﻿namespace LightStateMachine.WpfExample.Classes
+﻿namespace Lightfsm.Wpfexmpl.Classes.States
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using LightStateMachine.Interfaces;
+    using Lightfsm.Interfaces;
 
     public class StateImplBase : IStateAction<BackupFilesStateEnum, object>
     {

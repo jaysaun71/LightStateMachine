@@ -1,4 +1,4 @@
-﻿namespace LightStateMachine.WpfExample
+﻿namespace Lightfsm.Wpfexmpl
 {
     using System.Windows;
 

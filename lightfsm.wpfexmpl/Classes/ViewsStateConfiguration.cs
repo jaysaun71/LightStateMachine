@@ -1,7 +1,8 @@
-﻿namespace LightStateMachine.WpfExample.Classes
+﻿namespace Lightfsm.Wpfexmpl.Classes
 {
+    using Lightfsm.Interfaces;
+    using Lightfsm.Wpfexmpl.Classes.States;
     using System.Collections.Generic;
-    using LightStateMachine.Interfaces;
 
     /// <summary>
     /// The states configurator.
@@ -21,7 +22,7 @@
         public BackupFilesStateEnum StartState => BackupFilesStateEnum.SettingsState;
 
         /// <summary>
-        /// Gets the exit state enum.
+        /// The exit state enum.
         /// </summary>
         public BackupFilesStateEnum ExitState => BackupFilesStateEnum.ExitState;
 

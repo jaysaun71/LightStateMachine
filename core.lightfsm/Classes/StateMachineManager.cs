@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace LightStateMachine.Classes
+namespace Lightfsm.Classes
 {
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using LightStateMachine.Interfaces;
+    using Lightfsm.Interfaces;
 
     /// <summary>
     /// The state manager.
