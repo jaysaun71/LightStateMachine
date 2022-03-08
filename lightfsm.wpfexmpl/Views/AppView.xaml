@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Lightfsm.Wpfexmpl.Views.SettingsPageView"
+﻿<UserControl x:Class="Lightfsm.Wpfexmpl.Views.AppView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -27,9 +27,9 @@
                 <Setter Property="GroupName" Value="TranferTypes" />
             </Style>
         </Grid.Resources>
-        <Button Grid.Row="0" Grid.Column="0" Command="{Binding ShowHomeViewCommand}" Content="Show HomeView" />
-        <Button Grid.Row="1" Grid.Column="0" Command="{Binding ShowAppViewCommand}" Content="Show AppView" />
+
+        <Button Grid.Row="0" Grid.Column="0" Command="{Binding ShowSettingsViewCommand}" Content="Show SettingsView" />
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding ShowCommandView}" Content="Show HomeView" />
         <Button Grid.Row="2" Grid.Column="0" Command="{Binding GoToPreviousCommand}" Content="Show Previous" />
         <Button Grid.Row="3" Grid.Column="0" Command="{Binding GoToNextCommand}" Content="Show Next" />
     </Grid>
-</UserControl>

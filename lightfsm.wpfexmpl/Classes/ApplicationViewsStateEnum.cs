@@ -1,24 +1,24 @@
 ﻿namespace Lightfsm.Wpfexmpl.Classes
 {
     /// <summary>
-    /// The Backup files states enum.
+    /// The Application state views enum.
     /// </summary>
-    public enum BackupFilesStateEnum
+    public enum ApplicationViewsStateEnum
     {
         /// <summary>
-        /// The check version state.
+        /// The Home Page state.
         /// </summary>
-        SettingsState,
+        HomePageState,
 
         /// <summary>
-        /// Transfer to removeable state.
+        /// The Settings page state.
         /// </summary>
-        TransferToRemoveableState,
+        SettingsPageState,
 
         /// <summary>
-        /// The recover previous version state.
+        /// The App pagestate.
         /// </summary>
-        TransferToLocationState,
+        AppPageState,
 
         /// <summary>
         /// The exit state.

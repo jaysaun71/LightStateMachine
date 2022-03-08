@@ -3,14 +3,14 @@
     using System.Threading.Tasks;
     using Lightfsm.Interfaces;
 
-    public class StateImplBase : IStateAction<BackupFilesStateEnum, object>
+    public class StateImplBase : IStateAction<ApplicationViewsStateEnum, object>
     {
         public bool CanPerform()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<BackupFilesStateEnum> PerformTransitionAction(object payload)
+        public Task<ApplicationViewsStateEnum> PerformTransitionAction(object payload)
         {
             throw new System.NotImplementedException();
         }

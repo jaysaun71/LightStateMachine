@@ -27,7 +27,10 @@
                 <Setter Property="GroupName" Value="TranferTypes" />
             </Style>
         </Grid.Resources>
-        
-        <RadioButton Grid.Row="1" Grid.Column="0" Content="HomePage"/>
+
+        <Button Grid.Row="0" Grid.Column="0" Command="{Binding ShowSettingsView}"  Content="Show SettingsView" />
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding ShowAppView}"  Content="Show AppView" />
+        <Button Grid.Row="2" Grid.Column="0" Command="{Binding GoToPreviousCommand}" Content="Show Previous" />
+        <Button Grid.Row="3" Grid.Column="0" Command="{Binding GoToNextCommand}" Content="Show Next" />
     </Grid>
 </UserControl>

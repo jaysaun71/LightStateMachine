@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Lightfsm.Interfaces;
 
-    public class CheckVersionStateImpl : StateImplBase
+    public class SettingsPageState : StateImplBase
     {
     }
 }

@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Lightfsm.Interfaces;
 
-    public class InstallStateImpl : StateImplBase
+    public class HomePageState : StateImplBase
     {
     }
 }

@@ -19,12 +19,12 @@
         /// <summary>
         /// Gets the exit state enum.
         /// </summary>
-        public BackupFilesStateEnum StartState => BackupFilesStateEnum.SettingsState;
+        public ApplicationViewsStateEnum StartState => ApplicationViewsStateEnum.SettingsState;
 
         /// <summary>
         /// The exit state enum.
         /// </summary>
-        public BackupFilesStateEnum ExitState => BackupFilesStateEnum.ExitState;
+        public ApplicationViewsStateEnum ExitState => ApplicationViewsStateEnum.ExitState;
 
         /// <summary>
         /// The get configuration.
@@ -32,14 +32,14 @@
         /// <returns>
         /// The <see cref="IDictionary"/>.
         /// </returns>
-        public IDictionary<BackupFilesStateEnum, IStateAction<BackupFilesStateEnum, object>> GetConfiguration()
+        public IDictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, object>> GetConfiguration()
         {
-            return new Dictionary<BackupFilesStateEnum, IStateAction<BackupFilesStateEnum, object>>
+            return new Dictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, object>>
                        {
-                           { BackupFilesStateEnum.SettingsState, new CheckVersionStateImpl() },
-                           { BackupFilesStateEnum.TransferToLocationState, new InstallStateImpl() },
-                           { BackupFilesStateEnum.TransferToRemoveableState, new PreviousVersionRecoveryStateImpl() },
-                           { BackupFilesStateEnum.ExitState, new ExitStateImpl() },
+                           { ApplicationViewsStateEnum.SettingsState, new HomePageState() },
+                           { ApplicationViewsStateEnum.TransferToLocationState, new SettingsPageState() },
+                           { ApplicationViewsStateEnum.TransferToRemoveableState, new AppPageStateImpl() },
+                           { ApplicationViewsStateEnum.ExitState, new ExitStateImpl() },
                        };
         }
     }

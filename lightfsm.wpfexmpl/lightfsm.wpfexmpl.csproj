@@ -69,20 +69,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\BackupFilesStateEnum.cs" />
+    <Compile Include="Classes\ApplicationViewsStateEnum.cs" />
     <Compile Include="Classes\DataContext\DefaultContext.cs" />
     <Compile Include="Classes\DataContext\SecondContext.cs" />
-    <Compile Include="Classes\States\CheckVersionStateImpl.cs" />
+    <Compile Include="Classes\States\HomePageState.cs" />
     <Compile Include="Classes\States\ExitStateImpl.cs" />
-    <Compile Include="Classes\States\InstallStateImpl.cs" />
-    <Compile Include="Classes\States\PreviousVersionRecoveryStateImpl.cs" />
+    <Compile Include="Classes\States\SettingsPageState.cs" />
+    <Compile Include="Classes\States\AppPageStateImpl.cs" />
     <Compile Include="Classes\States\StateImplBase.cs" />
     <Compile Include="Classes\DataContext\ThirdContext.cs" />
     <Compile Include="Classes\ViewDataTemplateSelector.cs" />
     <Compile Include="Classes\DelegateCommand.cs" />
+    <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="Views\AppView.xaml.cs">
+      <DependentUpon>AppView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePageView.xaml.cs">
       <DependentUpon>HomePageView.xaml</DependentUpon>
     </Compile>
@@ -102,6 +106,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AppView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
