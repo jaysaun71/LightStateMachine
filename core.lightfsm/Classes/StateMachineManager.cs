@@ -19,7 +19,7 @@ namespace Lightfsm.Classes
     /// <typeparam name="TPayload">
     /// TPayload is pass through all entered states.
     /// </typeparam>
-    public class StateMachineManager<TStateEnum, TPayload>
+    public class StateMachineManager<TStateEnum, TPayload> : IStateMachineManager<TPayload>
         where TPayload : class
         where TStateEnum : System.Enum
     {

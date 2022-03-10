@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Lightfsm.Interfaces;
 
-    public class SettingsPageState : StateImplBase
+    public class HomePageStateImpl : StateImplBase
     {
     }
 }

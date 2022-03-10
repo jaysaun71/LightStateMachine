@@ -1,5 +1,7 @@
 ﻿namespace Lightfsm.Wpfexmpl
 {
+    using Lightfsm.Classes;
+    using Lightfsm.Wpfexmpl.Classes;
     using Lightfsm.Wpfexmpl.Classes.DataContext;
     using Lightfsm.Wpfexmpl.ViewModels;
     using System.Windows.Input;
@@ -51,13 +53,14 @@
         {
             this.LoadFirstPageCommand = new DelegateCommand(x => this.LoadFirstPage());
             this.LoadSecondPageCommand = new DelegateCommand(x => this.LoadSecondPage());
-            this.CurrentViewModel = new HomePageViewModel();
+            this.CurrentViewModel = new AppViewModel();
         }
 
         private void LoadFirstPage()
         {
+            //TODO: implement set page title as title of the current child view
             this.PageTitle = "A";
-            this.CurrentViewModel = new HomePageViewModel();
+            this.CurrentViewModel = new AppViewModel();
         }
 
         private void LoadSecondPage()

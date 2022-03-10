@@ -1,5 +1,6 @@
 ﻿namespace Lightfsm.Wpfexmpl.ViewModels
 {
+    using Lightfsm.Classes;
     using System;
     using System.Windows.Input;
     internal class AppViewModel : ViewModelBase
@@ -11,6 +12,9 @@
 
         public AppViewModel()
         {
+            // bind methods from fsm to views
+            // add go to exact state method in fsm
+            var machine = DependencyResolver.ResolveType<IStateMachineManager<object>>();
             this.ShowHomePageCommand = new DelegateCommand(x => this.ShowHomePage());
             this.ShowSettingsPageCommand = new DelegateCommand(x => this.ShowSettingsPage());
             this.GoToPreviousPageCommand = new DelegateCommand(x => this.GoToPreviousPage());

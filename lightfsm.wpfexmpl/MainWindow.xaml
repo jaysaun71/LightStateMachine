@@ -101,9 +101,7 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left">
-            <Button Command="{Binding LoadFirstPageCommand}" Width="100" Height="100" Content="First"/>
-            <Button Command="{Binding LoadSecondPageCommand}" Width="100" Height="100" Content="Second"/>
+        <StackPanel DockPanel.Dock="Top">
             <Label Content="{Binding PageTitle}" Width="100" Height="100" />
         </StackPanel>
         <ContentControl Content="{Binding Path=CurrentViewModel}" />

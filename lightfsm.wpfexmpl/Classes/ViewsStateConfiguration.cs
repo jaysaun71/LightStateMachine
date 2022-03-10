@@ -36,8 +36,8 @@
         {
             return new Dictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, object>>
                        {
-                           { ApplicationViewsStateEnum.HomePageState, new HomePageState() },
-                           { ApplicationViewsStateEnum.SettingsPageState, new SettingsPageState() },
+                           { ApplicationViewsStateEnum.HomePageState, new HomePageStateImpl() },
+                           { ApplicationViewsStateEnum.SettingsPageState, new SettingsPageStateImpl() },
                            { ApplicationViewsStateEnum.AppPageState, new AppPageStateImpl() },
                            { ApplicationViewsStateEnum.ExitState, new ExitStateImpl() },
                        };
