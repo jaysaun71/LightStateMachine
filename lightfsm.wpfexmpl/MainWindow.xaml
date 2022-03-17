@@ -93,6 +93,9 @@
                 SecondDataTemplate="{StaticResource SecondTemplate}"
                 ThirdDataTemplate="{StaticResource ThirdTemplate}" />
         </ResourceDictionary>-->
+        <DataTemplate DataType="{x:Type viewmodels:AppViewModel}">
+            <views:AppView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:HomePageViewModel}">
             <views:HomePageView />
         </DataTemplate>

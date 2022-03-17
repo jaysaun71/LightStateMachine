@@ -21,6 +21,7 @@
             {
                 return (T)result;
             }
+
             // that's null casted to type later on implement exception handling
             return (T)result;
         }

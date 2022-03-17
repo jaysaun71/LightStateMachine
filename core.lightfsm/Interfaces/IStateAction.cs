@@ -1,5 +1,6 @@
 ﻿namespace Lightfsm.Interfaces
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -15,6 +16,8 @@
     public interface IStateAction<TStateEnum, in TPayload>
         where TStateEnum : System.Enum
     {
+        IList<TStateEnum> AllowedStateTransition { get; }
+
         /// <summary>
         /// The can perform.
         /// </summary>

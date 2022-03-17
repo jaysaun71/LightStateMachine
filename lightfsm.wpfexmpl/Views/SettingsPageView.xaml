@@ -27,9 +27,10 @@
                 <Setter Property="GroupName" Value="TranferTypes" />
             </Style>
         </Grid.Resources>
-        <Button Grid.Row="0" Grid.Column="0" Command="{Binding ShowHomeViewCommand}" Content="Show HomeView" />
-        <Button Grid.Row="1" Grid.Column="0" Command="{Binding ShowAppViewCommand}" Content="Show AppView" />
+        <Button Grid.Row="0" Grid.Column="0" Command="{Binding ShowHomePageCommand}" Content="Show HomeView" />
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding ShowAppPageCommand}" Content="Show AppView" />
         <Button Grid.Row="2" Grid.Column="0" Command="{Binding GoToPreviousCommand}" Content="Show Previous" />
         <Button Grid.Row="3" Grid.Column="0" Command="{Binding GoToNextCommand}" Content="Show Next" />
+        <TextBox Grid.Row="4" Grid.Column="0" Text="SettingsPageView"/>
     </Grid>
 </UserControl>

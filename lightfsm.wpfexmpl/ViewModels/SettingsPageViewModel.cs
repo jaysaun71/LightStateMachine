@@ -1,42 +1,46 @@
 ﻿namespace Lightfsm.Wpfexmpl.ViewModels
 {
+    using Lightfsm.Classes;
     using Lightfsm.Wpfexmpl;
+    using Lightfsm.Wpfexmpl.Classes;
     using System;
     using System.Windows.Input;
 
     internal class SettingsPageViewModel : ViewModelBase
     {
-        private ICommand ShowHomePageCommand;
-        private ICommand ShowAppPageCommand;
-        private ICommand GoToPreviousPageCommand;
-        private ICommand GoToNextPageCommand;
+        public ICommand ShowHomePageCommand { get; private set; }
+        public ICommand ShowAppPageCommand { get; private set; }
+        public ICommand GoToNextCommand { get; private set; }
+        public ICommand GoToPreviousCommand { get; private set; }
+
+        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager = DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>();
 
         public SettingsPageViewModel()
         {
             this.ShowHomePageCommand = new DelegateCommand(x => this.ShowHomePage());
             this.ShowAppPageCommand = new DelegateCommand(x => this.ShowAppPage());
-            this.GoToPreviousPageCommand = new DelegateCommand(x => this.GoToPreviousPage());
-            this.GoToNextPageCommand = new DelegateCommand(x => this.GoToNextPage());
+            this.GoToPreviousCommand = new DelegateCommand(x => this.GoToPreviousPage());
+            this.GoToNextCommand = new DelegateCommand(x => this.GoToNextPage());
         }
 
         private void ShowHomePage()
         {
-            throw new NotImplementedException();
+            this.stateMachineManager.PerformTransitionTo(ApplicationViewsStateEnum.HomePageState);
         }
 
         private void ShowAppPage()
         {
-            throw new NotImplementedException();
+            this.stateMachineManager.PerformTransitionTo(ApplicationViewsStateEnum.AppPageState);
         }
 
         private void GoToPreviousPage()
         {
-            throw new NotImplementedException();
+            this.stateMachineManager.GoToPreviousState();
         }
 
         private void GoToNextPage()
         {
-            throw new NotImplementedException();
+            this.stateMachineManager.PerformTransition();
         }
     }
 }

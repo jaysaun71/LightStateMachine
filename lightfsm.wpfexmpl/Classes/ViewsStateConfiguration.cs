@@ -2,6 +2,7 @@
 {
     using Lightfsm.Interfaces;
     using Lightfsm.Wpfexmpl.Classes.States;
+    using Lightfsm.Wpfexmpl.ViewModels;
     using System.Collections.Generic;
 
     /// <summary>
@@ -32,13 +33,14 @@
         /// <returns>
         /// The <see cref="IDictionary"/>.
         /// </returns>
-        public IDictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, object>> GetConfiguration()
+        public IDictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>> GetConfiguration()
         {
-            return new Dictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, object>>
+            // TODO: use alias of ApplicationViewStateEnum to clean up ? unreadable code
+            return new Dictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>>
                        {
-                           { ApplicationViewsStateEnum.HomePageState, new HomePageStateImpl() },
-                           { ApplicationViewsStateEnum.SettingsPageState, new SettingsPageStateImpl() },
-                           { ApplicationViewsStateEnum.AppPageState, new AppPageStateImpl() },
+                           { ApplicationViewsStateEnum.HomePageState, new HomePageStateImpl(new List<ApplicationViewsStateEnum> { ApplicationViewsStateEnum.SettingsPageState, ApplicationViewsStateEnum.ExitState }) },
+                           { ApplicationViewsStateEnum.SettingsPageState, new SettingsPageStateImpl(new List<ApplicationViewsStateEnum> { ApplicationViewsStateEnum.AppPageState, ApplicationViewsStateEnum.ExitState }) },
+                           { ApplicationViewsStateEnum.AppPageState, new AppPageStateImpl(new List<ApplicationViewsStateEnum> { ApplicationViewsStateEnum.ExitState }) },
                            { ApplicationViewsStateEnum.ExitState, new ExitStateImpl() },
                        };
         }

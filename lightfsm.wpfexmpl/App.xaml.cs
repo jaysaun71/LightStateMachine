@@ -2,6 +2,8 @@
 {
     using Lightfsm.Classes;
     using Lightfsm.Wpfexmpl.Classes;
+    using Lightfsm.Wpfexmpl.ViewModels;
+    using System;
     using System.Windows;
 
     /// <summary>
@@ -13,14 +15,14 @@
         {
             // instantiate statemachine
             var stateConfig = new ViewsStateConfiguration();
-            DependencyResolver.RegisterType<IStateMachineManager<object>>(() => {
-                return new StateMachineManager<ApplicationViewsStateEnum, object>(
+            DependencyResolver.RegisterType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>(() =>
+            {
+                return new StateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>(
                     stateConfig.GetConfiguration(),
                     stateConfig.StartState,
                     stateConfig.ExitState,
                     stateConfig.ExitState);
-                });
-            var machine = DependencyResolver.ResolveType<IStateMachineManager<object>>();
+            });
         }
     }
 }
