@@ -3,11 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lightfsm="clr-namespace:Lightfsm"
-        xmlns:mc2="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lightfsm2="clr-namespace:Lightfsm.Wpfexmpl.Classes.DataContext"
+        xmlns:mc2="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lightfsm2="clr-namespace:Lightfsm.Wpfexmpl.Classes.DataContext" 
+        xmlns:views="clr-namespace:Lightfsm.Wpfexmpl.Views"
+        xmlns:viewmodels="clr-namespace:Lightfsm.Wpfexmpl.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <ResourceDictionary>
+        <!--<ResourceDictionary>
             <DataTemplate x:Key="DefaultTemplate" DataType="DefaultContext">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -90,15 +92,22 @@
                 DefaultDataTemplate="{StaticResource DefaultTemplate}"
                 SecondDataTemplate="{StaticResource SecondTemplate}"
                 ThirdDataTemplate="{StaticResource ThirdTemplate}" />
-        </ResourceDictionary>
+        </ResourceDictionary>-->
+        <DataTemplate DataType="{x:Type viewmodels:AppViewModel}">
+            <views:AppView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HomePageViewModel}">
+            <views:HomePageView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SettingsPageViewModel}">
+            <views:SettingsPageView />
+        </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left">
-            <Button Command="{Binding LoadFirstPageCommand}" Width="100" Height="100" Content="First"/>
-            <Button Command="{Binding LoadSecondPageCommand}" Width="100" Height="100" Content="Second"/>
+        <StackPanel DockPanel.Dock="Top">
             <Label Content="{Binding PageTitle}" Width="100" Height="100" />
         </StackPanel>
-        <!--<ContentControl Content="{Binding Path=CurrentViewModel}" />-->
-        <ContentControl ContentTemplateSelector="{StaticResource ViewTemplateSelector}" Content="{Binding CurrentViewModel}" />
+        <ContentControl Content="{Binding Path=CurrentViewModel}" />
+            <!--<ContentControl ContentTemplateSelector="{StaticResource ViewTemplateSelector}" Content="{Binding CurrentViewModel}" />-->
     </DockPanel>
 </Window>

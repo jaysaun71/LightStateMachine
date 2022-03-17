@@ -2,6 +2,7 @@
 {
     using Lightfsm.Interfaces;
     using Lightfsm.Wpfexmpl.Classes.States;
+    using Lightfsm.Wpfexmpl.ViewModels;
     using System.Collections.Generic;
 
     /// <summary>
@@ -19,12 +20,12 @@
         /// <summary>
         /// Gets the exit state enum.
         /// </summary>
-        public BackupFilesStateEnum StartState => BackupFilesStateEnum.SettingsState;
+        public ApplicationViewsStateEnum StartState => ApplicationViewsStateEnum.HomePageState;
 
         /// <summary>
         /// The exit state enum.
         /// </summary>
-        public BackupFilesStateEnum ExitState => BackupFilesStateEnum.ExitState;
+        public ApplicationViewsStateEnum ExitState => ApplicationViewsStateEnum.ExitState;
 
         /// <summary>
         /// The get configuration.
@@ -32,14 +33,15 @@
         /// <returns>
         /// The <see cref="IDictionary"/>.
         /// </returns>
-        public IDictionary<BackupFilesStateEnum, IStateAction<BackupFilesStateEnum, object>> GetConfiguration()
+        public IDictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>> GetConfiguration()
         {
-            return new Dictionary<BackupFilesStateEnum, IStateAction<BackupFilesStateEnum, object>>
+            // TODO: use alias of ApplicationViewStateEnum to clean up ? unreadable code
+            return new Dictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>>
                        {
-                           { BackupFilesStateEnum.SettingsState, new CheckVersionStateImpl() },
-                           { BackupFilesStateEnum.TransferToLocationState, new InstallStateImpl() },
-                           { BackupFilesStateEnum.TransferToRemoveableState, new PreviousVersionRecoveryStateImpl() },
-                           { BackupFilesStateEnum.ExitState, new ExitStateImpl() },
+                           { ApplicationViewsStateEnum.HomePageState, new HomePageStateImpl(new List<ApplicationViewsStateEnum> { ApplicationViewsStateEnum.SettingsPageState, ApplicationViewsStateEnum.ExitState }) },
+                           { ApplicationViewsStateEnum.SettingsPageState, new SettingsPageStateImpl(new List<ApplicationViewsStateEnum> { ApplicationViewsStateEnum.AppPageState, ApplicationViewsStateEnum.ExitState }) },
+                           { ApplicationViewsStateEnum.AppPageState, new AppPageStateImpl(new List<ApplicationViewsStateEnum> { ApplicationViewsStateEnum.ExitState }) },
+                           { ApplicationViewsStateEnum.ExitState, new ExitStateImpl() },
                        };
         }
     }

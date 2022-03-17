@@ -1,23 +1,37 @@
 ﻿namespace Lightfsm.Wpfexmpl.Classes.States
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using Lightfsm.Interfaces;
+    using Lightfsm.Wpfexmpl.ViewModels;
 
-    public class StateImplBase : IStateAction<BackupFilesStateEnum, object>
+    public abstract class StateImplBase : IStateAction<ApplicationViewsStateEnum, IViewStatePayload>
     {
+        public IList<ApplicationViewsStateEnum> AllowedStateTransition { get; private set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StateImplBase"/> class.
+        /// </summary>
+        /// <param name="allowedStates">allowed transition states</param>
+        public StateImplBase(IList<ApplicationViewsStateEnum> allowedStates)
+        {
+            this.AllowedStateTransition = allowedStates;
+        }
+
         public bool CanPerform()
         {
-            throw new System.NotImplementedException();
+            // TODO: customize it. add some logic maybe delegated
+            return true;
         }
 
-        public Task<BackupFilesStateEnum> PerformTransitionAction(object payload)
+        public async Task<ApplicationViewsStateEnum> PerformTransitionAction(IViewStatePayload payload)
         {
-            throw new System.NotImplementedException();
+            return ApplicationViewsStateEnum.NullState;
         }
 
-        public void PerformOnEnterAction(object payload)
+        public void PerformOnEnterAction(IViewStatePayload payload)
         {
-            throw new System.NotImplementedException();
+            // TODO: implement
         }
     }
 }

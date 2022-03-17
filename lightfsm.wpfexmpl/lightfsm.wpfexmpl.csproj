@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{549F0F5D-9FAE-4508-B991-A24E8EE69391}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LightStateMachine.WpfExample</RootNamespace>
-    <AssemblyName>LightStateMachine.WpfExample</AssemblyName>
+    <RootNamespace>Lightfsm.Wpfexmpl</RootNamespace>
+    <AssemblyName>Lightfsm.WpfExmpl</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -69,18 +69,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\BackupFilesStateEnum.cs" />
+    <Compile Include="Classes\ApplicationViewsStateEnum.cs" />
     <Compile Include="Classes\DataContext\DefaultContext.cs" />
     <Compile Include="Classes\DataContext\SecondContext.cs" />
-    <Compile Include="Classes\States\CheckVersionStateImpl.cs" />
+    <Compile Include="Classes\States\HomePageStateImpl.cs" />
     <Compile Include="Classes\States\ExitStateImpl.cs" />
-    <Compile Include="Classes\States\InstallStateImpl.cs" />
-    <Compile Include="Classes\States\PreviousVersionRecoveryStateImpl.cs" />
+    <Compile Include="Classes\States\SettingsPageStateImpl.cs" />
+    <Compile Include="Classes\States\AppPageStateImpl.cs" />
     <Compile Include="Classes\States\StateImplBase.cs" />
     <Compile Include="Classes\DataContext\ThirdContext.cs" />
     <Compile Include="Classes\ViewDataTemplateSelector.cs" />
-    <Compile Include="DelegateCommand.cs" />
-    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="Classes\DelegateCommand.cs" />
+    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="ViewModels\AppViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
+    <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="Classes\IViewStatePayload.cs" />
+    <Compile Include="Views\AppView.xaml.cs">
+      <DependentUpon>AppView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePageView.xaml.cs">
+      <DependentUpon>HomePageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPageView.xaml.cs">
+      <DependentUpon>SettingsPageView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +108,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AppView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomePageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
@@ -119,7 +145,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
