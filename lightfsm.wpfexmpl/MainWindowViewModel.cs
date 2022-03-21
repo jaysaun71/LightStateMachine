@@ -49,13 +49,16 @@
 
         public ICommand LoadSecondPageCommand { get; private set; }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
+        {
+        }
+
+        public MainWindowViewModel(IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> machine)
         {
             this.LoadFirstPageCommand = new DelegateCommand(x => this.LoadFirstPage());
             this.LoadSecondPageCommand = new DelegateCommand(x => this.LoadSecondPage());
             this.CurrentViewModel = new HomePageViewModel();
 
-            var machine = DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>();
             machine.Initialize(this);
         }
 

@@ -13,14 +13,18 @@
         public ICommand GoToNextCommand { get; private set; }
         public ICommand GoToPreviousCommand { get; private set; }
 
-        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager = DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>();
-
-        public SettingsPageViewModel()
+        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager;
+        public SettingsPageViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
             this.ShowHomePageCommand = new DelegateCommand(x => this.ShowHomePage());
             this.ShowAppPageCommand = new DelegateCommand(x => this.ShowAppPage());
             this.GoToPreviousCommand = new DelegateCommand(x => this.GoToPreviousPage());
             this.GoToNextCommand = new DelegateCommand(x => this.GoToNextPage());
+        }
+
+        public SettingsPageViewModel(IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager)
+        {
+            this.stateMachineManager = stateMachineManager;
         }
 
         private void ShowHomePage()

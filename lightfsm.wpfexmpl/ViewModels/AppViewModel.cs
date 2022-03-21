@@ -15,9 +15,9 @@
 
         public ICommand GoToPreviousCommand { get; private set; }
 
-        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager = DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>();
+        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager;
 
-        public AppViewModel()
+        public AppViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
             // bind methods from fsm to views
             // add go to exact state method in fsm
@@ -25,6 +25,11 @@
             this.ShowSettingsPageCommand = new DelegateCommand(x => this.ShowSettingsPage());
             this.GoToPreviousCommand = new DelegateCommand(x => this.GoToPreviousPage());
             this.GoToNextCommand = new DelegateCommand(x => this.GoToNextPage());
+        }
+
+        public AppViewModel(IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager)
+        {
+            this.stateMachineManager = stateMachineManager;
         }
 
         private void ShowHomePage()

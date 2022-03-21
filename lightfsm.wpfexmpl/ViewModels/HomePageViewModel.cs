@@ -17,14 +17,19 @@
         public ICommand GoToNextCommand { get; private set; }
         public ICommand GoToPreviousCommand { get; private set; }
 
-        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager = DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>();
-
-        public HomePageViewModel()
+        private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager;
+        public HomePageViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
             this.ShowAppPageCommand = new DelegateCommand(x => this.ShowAppPage());
             this.ShowSettingsPageCommand = new DelegateCommand(x => this.ShowSettingsPage());
             this.GoToPreviousCommand = new DelegateCommand(x => this.GoToPreviousPage());
             this.GoToNextCommand = new DelegateCommand(x => this.GoToNextPage());
+        }
+
+        public HomePageViewModel(IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager)
+        {
+            // TODO: some null exception strategy
+            this.stateMachineManager = stateMachineManager;
         }
 
         public void ShowAppPage()

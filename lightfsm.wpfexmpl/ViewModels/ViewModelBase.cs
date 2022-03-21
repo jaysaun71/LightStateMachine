@@ -8,6 +8,7 @@
     /// </summary>
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
+        
         /// <summary>
         /// PropertyChanged event
         /// </summary>

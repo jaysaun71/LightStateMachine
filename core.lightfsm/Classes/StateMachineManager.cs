@@ -72,6 +72,8 @@
             this.PreviousState = this.NullState;
 
             this.statesArray = Enum.GetValues(startState.GetType());
+
+            //TODO: add status of fsm so it can be checked if machine is running or not before any transition calls.
         }
 
         /// <summary>
