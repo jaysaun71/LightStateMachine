@@ -1,8 +1,9 @@
-﻿namespace Lightfsm.Wpfexmpl
+﻿namespace Core.Lightfsm.Wpfexmpl
 {
     using Lightfsm.Classes;
     using Lightfsm.Wpfexmpl.Classes;
-    using Lightfsm.Wpfexmpl.ViewModels;
+    using Lightfsm.Wpfexmpl.Classes.DataContext;
+    using Lightfsm.Wpfexmpl.Classes.DIContainer;
     using System;
     using System.Windows;
 
@@ -32,8 +33,38 @@
 
         private void StartupApp(object sender, StartupEventArgs e)
         {
+            // di tests
+            var x = DependencyResolver.ResolveType<DITestClass>();
+            DependencyResolver.GetTypeInfo(typeof(DITestClass));
+            DependencyResolver.GetTypeInfo(typeof(DefaultContext));
+
             App.Current.MainWindow = new MainWindow();
             App.Current.MainWindow.Show();
         }
+    }
+
+    internal class DITestClass : IDITestClass
+    {
+        public DITestClass(ITestOneInterface x, ITestTwoInterface y)
+        {
+
+        }
+    }
+
+    internal interface IDITestClass
+    {
+    }
+
+    internal class InjectedClass : ITestOneInterface, ITestTwoInterface
+    {
+
+    }
+
+    internal interface ITestTwoInterface
+    {
+    }
+
+    internal interface ITestOneInterface
+    {
     }
 }

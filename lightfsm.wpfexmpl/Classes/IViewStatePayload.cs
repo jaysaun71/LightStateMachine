@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl.Classes
+﻿namespace Core.Lightfsm.Wpfexmpl.Classes
 {
     public interface IViewStatePayload
     {

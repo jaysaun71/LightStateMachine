@@ -1,4 +1,4 @@
-﻿<Application x:Class="Lightfsm.Wpfexmpl.App"
+﻿<Application x:Class="Core.Lightfsm.Wpfexmpl.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Startup="StartupApp">

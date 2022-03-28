@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl.Classes
+﻿namespace Core.Lightfsm.Wpfexmpl.Classes
 {
     using Lightfsm.Interfaces;
     using Lightfsm.Wpfexmpl.Classes.States;
@@ -31,7 +31,7 @@
         /// The get configuration.
         /// </summary>
         /// <returns>
-        /// The <see cref="IDictionary"/>.
+        /// The <see cref="IDictionary{TKey,TValue}"/>.
         /// </returns>
         public IDictionary<ApplicationViewsStateEnum, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>> GetConfiguration()
         {

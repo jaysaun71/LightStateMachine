@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl.Views
+﻿namespace Core.Lightfsm.Wpfexmpl.Views
 {
     using System.Windows.Controls;
 

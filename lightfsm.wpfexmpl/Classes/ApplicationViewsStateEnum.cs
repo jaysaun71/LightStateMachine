@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl.Classes
+﻿namespace Core.Lightfsm.Wpfexmpl.Classes
 {
     /// <summary>
     /// The Application state views enum.

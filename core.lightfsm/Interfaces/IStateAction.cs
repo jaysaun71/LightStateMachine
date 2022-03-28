@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Interfaces
+﻿namespace Core.Lightfsm.Interfaces
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;

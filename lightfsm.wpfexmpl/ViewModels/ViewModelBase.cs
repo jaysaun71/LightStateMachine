@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl
+﻿namespace Core.Lightfsm.Wpfexmpl
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;

@@ -1,9 +1,8 @@
-﻿namespace Lightfsm.Classes
+﻿namespace Core.Lightfsm.Classes
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
-    using Lightfsm.Interfaces;
+    using Core.Lightfsm.Interfaces;
 
     /// <summary>
     /// The state manager.

@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl.Classes.DataContext
+﻿namespace Core.Lightfsm.Wpfexmpl.Classes.DataContext
 {
     internal class DefaultContext : ViewModelBase
     {

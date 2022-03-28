@@ -72,6 +72,7 @@
     <Compile Include="Classes\ApplicationViewsStateEnum.cs" />
     <Compile Include="Classes\DataContext\DefaultContext.cs" />
     <Compile Include="Classes\DataContext\SecondContext.cs" />
+    <Compile Include="Classes\DIContainer\DependencyResolver.cs" />
     <Compile Include="Classes\States\HomePageStateImpl.cs" />
     <Compile Include="Classes\States\ExitStateImpl.cs" />
     <Compile Include="Classes\States\SettingsPageStateImpl.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Classes\DataContext\ThirdContext.cs" />
     <Compile Include="Classes\ViewDataTemplateSelector.cs" />
     <Compile Include="Classes\DelegateCommand.cs" />
-    <Compile Include="DependencyResolver.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />

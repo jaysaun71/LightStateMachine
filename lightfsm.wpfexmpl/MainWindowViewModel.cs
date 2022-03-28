@@ -1,8 +1,8 @@
-﻿namespace Lightfsm.Wpfexmpl
+﻿namespace Core.Lightfsm.Wpfexmpl
 {
     using Lightfsm.Classes;
     using Lightfsm.Wpfexmpl.Classes;
-    using Lightfsm.Wpfexmpl.Classes.DataContext;
+    using Lightfsm.Wpfexmpl.Classes.DIContainer;
     using Lightfsm.Wpfexmpl.ViewModels;
     using System.Windows.Input;
 

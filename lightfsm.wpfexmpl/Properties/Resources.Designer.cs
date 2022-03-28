@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lightfsm.Wpfexmpl.Properties {
+namespace Core.Lightfsm.Wpfexmpl.Properties {
     using System;
     
     

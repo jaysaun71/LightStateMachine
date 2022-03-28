@@ -1,4 +1,4 @@
-﻿namespace Lightfsm
+﻿namespace Core.Lightfsm
 {
     using Lightfsm.Wpfexmpl.Classes.DataContext;
     using System.Windows;

@@ -1,4 +1,4 @@
-﻿namespace Lightfsm.Wpfexmpl.Classes.States
+﻿namespace Core.Lightfsm.Wpfexmpl.Classes.States
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;

@@ -1,11 +1,12 @@
-﻿namespace Lightfsm.Wpfexmpl
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
+namespace Core.Lightfsm.Wpfexmpl.Classes.DIContainer
+{
     internal static class DependencyResolver
     {
-        public static Dictionary<Type,object> Dependencies = new Dictionary<Type,object>();
+        public static Dictionary<Type,object> Dependencies = new Dictionary<Type, object>();
 
         public static void RegisterType<T>(Func<T> typeCreator)
         {
@@ -24,6 +25,12 @@
 
             // that's null casted to type later on implement exception handling
             return (T)result;
+        }
+
+        public static void GetTypeInfo(Type type)
+        {
+            ConstructorInfo[] ctors = type.GetConstructors();
+            var parameterInfos = ctors[0].GetParameters();
         }
     }
 }
