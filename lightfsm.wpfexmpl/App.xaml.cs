@@ -33,11 +33,6 @@
 
         private void StartupApp(object sender, StartupEventArgs e)
         {
-            // di tests
-            var x = DependencyResolver.ResolveType<DITestClass>();
-            DependencyResolver.GetTypeInfo(typeof(DITestClass));
-            DependencyResolver.GetTypeInfo(typeof(DefaultContext));
-
             App.Current.MainWindow = new MainWindow();
             App.Current.MainWindow.Show();
         }
