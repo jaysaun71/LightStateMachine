@@ -1,10 +1,11 @@
 ﻿namespace Core.Lightfsm.Wpfexmpl
 {
-    using Lightfsm.Classes;
-    using Lightfsm.Wpfexmpl.Classes;
-    using Lightfsm.Wpfexmpl.Classes.DIContainer;
-    using Lightfsm.Wpfexmpl.ViewModels;
+    using Interfaces;
     using System.Windows.Input;
+    using Classes;
+    using Core.Lightfsm.Wpfexmpl.Classes;
+    using Classes.DIContainer;
+    using ViewModels;
 
     /// <summary>
     /// MainWindowViewModel.

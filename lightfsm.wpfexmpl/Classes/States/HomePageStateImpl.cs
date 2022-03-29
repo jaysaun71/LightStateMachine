@@ -2,8 +2,10 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Lightfsm.Interfaces;
-    using Lightfsm.Wpfexmpl.ViewModels;
+    using Core.Lightfsm.Wpfexmpl.Classes;
+    using Interfaces;
+    using ViewModels;
+
 
     public class HomePageStateImpl : StateImplBase, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>
     {

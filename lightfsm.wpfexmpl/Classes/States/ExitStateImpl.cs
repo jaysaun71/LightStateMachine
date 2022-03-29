@@ -1,6 +1,7 @@
 ﻿namespace Core.Lightfsm.Wpfexmpl.Classes.States
 {
     using System.Collections.Generic;
+
     public class ExitStateImpl : StateImplBase
     {
         /// <summary>

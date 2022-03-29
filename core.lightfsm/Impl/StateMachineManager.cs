@@ -1,7 +1,9 @@
-﻿namespace Core.Lightfsm.Classes
+﻿namespace Core.Lightfsm.Impl
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
+
     using Core.Lightfsm.Interfaces;
 
     /// <summary>

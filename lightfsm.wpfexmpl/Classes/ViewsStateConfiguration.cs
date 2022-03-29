@@ -1,9 +1,10 @@
 ﻿namespace Core.Lightfsm.Wpfexmpl.Classes
 {
-    using Lightfsm.Interfaces;
-    using Lightfsm.Wpfexmpl.Classes.States;
-    using Lightfsm.Wpfexmpl.ViewModels;
+
     using System.Collections.Generic;
+    using Core.Lightfsm.Interfaces;
+    using Core.Lightfsm.Wpfexmpl.Classes;
+    using Core.Lightfsm.Wpfexmpl.Classes.States;
 
     /// <summary>
     /// The states configurator.

@@ -1,4 +1,4 @@
-﻿namespace Core.Lightfsm.Classes
+﻿namespace Core.Lightfsm.Interfaces
 {
     public interface IStateMachineManager<TStateEnum, TPayload>
         where TPayload : class

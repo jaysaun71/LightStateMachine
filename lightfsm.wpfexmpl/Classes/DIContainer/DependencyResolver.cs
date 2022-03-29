@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-
-namespace Core.Lightfsm.Wpfexmpl.Classes.DIContainer
+﻿namespace Core.Lightfsm.Wpfexmpl.Classes.DIContainer
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+
     internal static class DependencyResolver
     {
         public static Dictionary<Type,object> Dependencies = new Dictionary<Type, object>();

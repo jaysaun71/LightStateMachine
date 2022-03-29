@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Lightfsm.Interfaces;
-    using Lightfsm.Wpfexmpl.ViewModels;
+    using Interfaces;
+    using ViewModels;
 
     public class AppPageStateImpl : StateImplBase, IStateAction<ApplicationViewsStateEnum, IViewStatePayload>
     {

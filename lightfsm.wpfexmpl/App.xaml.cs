@@ -1,11 +1,14 @@
 ﻿namespace Core.Lightfsm.Wpfexmpl
 {
-    using Lightfsm.Classes;
-    using Lightfsm.Wpfexmpl.Classes;
-    using Lightfsm.Wpfexmpl.Classes.DataContext;
-    using Lightfsm.Wpfexmpl.Classes.DIContainer;
     using System;
     using System.Windows;
+
+    using Core.Lightfsm.Wpfexmpl.Classes;
+    using Core.Lightfsm.Wpfexmpl.Classes.DataContext;
+    using Core.Lightfsm.Wpfexmpl.Classes.DIContainer;
+
+    using Core.Lightfsm.Interfaces;
+    using Core.Lightfsm.Impl;
 
     /// <summary>
     /// Interaction logic for App.xaml
@@ -19,7 +22,7 @@
 
         private static void Initialize()
         {
-            // state machine init 
+            // state machine init
             var stateConfig = new ViewsStateConfiguration();
             DependencyResolver.RegisterType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>(() =>
             {
