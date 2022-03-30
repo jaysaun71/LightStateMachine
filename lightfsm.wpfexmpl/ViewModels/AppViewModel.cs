@@ -1,4 +1,4 @@
-﻿using Core.Lightfsm.Wpfexmpl.Classes.DIContainer;
+﻿using Core.Lightfsm.Classes.DIContainer;
 
 namespace Core.Lightfsm.Wpfexmpl.ViewModels
 {

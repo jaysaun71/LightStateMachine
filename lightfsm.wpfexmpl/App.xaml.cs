@@ -5,7 +5,7 @@
 
     using Core.Lightfsm.Wpfexmpl.Classes;
     using Core.Lightfsm.Wpfexmpl.Classes.DataContext;
-    using Core.Lightfsm.Wpfexmpl.Classes.DIContainer;
+    using Lightfsm.Classes.DIContainer;
 
     using Core.Lightfsm.Interfaces;
     using Core.Lightfsm.Impl;
@@ -39,30 +39,5 @@
             App.Current.MainWindow = new MainWindow();
             App.Current.MainWindow.Show();
         }
-    }
-
-    internal class DITestClass : IDITestClass
-    {
-        public DITestClass(ITestOneInterface x, ITestTwoInterface y)
-        {
-
-        }
-    }
-
-    internal interface IDITestClass
-    {
-    }
-
-    internal class InjectedClass : ITestOneInterface, ITestTwoInterface
-    {
-
-    }
-
-    internal interface ITestTwoInterface
-    {
-    }
-
-    internal interface ITestOneInterface
-    {
     }
 }

@@ -4,7 +4,7 @@
     using System.Windows.Input;
     using Classes;
     using Core.Lightfsm.Wpfexmpl.Classes;
-    using Classes.DIContainer;
+    using Lightfsm.Classes.DIContainer;
     using ViewModels;
 
     /// <summary>

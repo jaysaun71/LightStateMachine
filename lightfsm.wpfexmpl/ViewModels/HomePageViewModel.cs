@@ -1,6 +1,6 @@
 ﻿namespace Core.Lightfsm.Wpfexmpl.ViewModels
 {
-    using Core.Lightfsm.Wpfexmpl.Classes.DIContainer;
+    using Lightfsm.Classes.DIContainer;
     using Interfaces;
     using Lightfsm.Wpfexmpl;
     using Lightfsm.Wpfexmpl.Classes;
