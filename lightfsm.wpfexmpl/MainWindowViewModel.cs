@@ -50,7 +50,7 @@
 
         public ICommand LoadSecondPageCommand { get; private set; }
 
-        public MainWindowViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
+        public MainWindowViewModel() : this(new DependencyResolver().ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
         }
 

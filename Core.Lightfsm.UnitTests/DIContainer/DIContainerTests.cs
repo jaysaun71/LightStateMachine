@@ -11,12 +11,13 @@ namespace Core.Lightfsm.UnitTests
         public void GivenRegisteredClassByInterface_VerifyCanResolveThroughDIContainer()
         {
             // Arrange
-            DependencyResolver.RegisterType<ITestOneInterface, InjectedClass>();
-            DependencyResolver.RegisterType<ITestTwoInterface, InjectedClass>();
-            DependencyResolver.RegisterType<IDITestClass, DITestClass>();
+            var dependencyResolver = new DependencyResolver();
+            dependencyResolver.RegisterType<ITestOneInterface, InjectedClass>();
+            dependencyResolver.RegisterType<ITestTwoInterface, InjectedClass>();
+            dependencyResolver.RegisterType<IDITestClass, DITestClass>();
 
             // Act
-            DependencyResolver.CreateImplByInterface<IDITestClass>();
+            dependencyResolver.ResolveType<IDITestClass>();
 
             // Assert
             Assert.Pass();
@@ -26,17 +27,38 @@ namespace Core.Lightfsm.UnitTests
         public void GivenRegisterClassByInterfaceWithTwoInterfacedParamsCtor_VerifyCanResolveThroughDIContainer()
         {
             // Arrange
-            DependencyResolver.RegisterType<ITestOneInterface, InjectedClass>();
-            DependencyResolver.RegisterType<ITestTwoInterface, InjectedClass>();
-            DependencyResolver.RegisterType<IDITestClass, DITestClass>();
+            var dependencyResolver = new DependencyResolver();
+            dependencyResolver.RegisterType<ITestOneInterface, InjectedClass>();
+            dependencyResolver.RegisterType<ITestTwoInterface, InjectedClass>();
+            dependencyResolver.RegisterType<IDITestClass, DITestClass>();
 
             // Act
-            var x = DependencyResolver.CreateImplByInterface<IDITestClass>();
+            IDITestClass diTestClassImpl = dependencyResolver.ResolveType<IDITestClass>();
+            DITestClass diTestClass = (DITestClass)diTestClassImpl;
+
+            // Assert
+            Assert.Pass();
+        }
+
+        [Test]
+        public void GivenRegisterClassByInterfaceWithTwoInterfacedParamsCtor2_VerifyCanResolveThroughDIContainer()
+        {
+            // Arrange
+            var dependencyResolver = new DependencyResolver();
+            dependencyResolver.RegisterType<ITestOneInterface, InjectedClass>();
+            dependencyResolver.RegisterType<ITestTwoInterface, InjectedClass2>();
+            
+            dependencyResolver.RegisterType<IDITestClass, DITestClass>();
+
+            // Act
+            var x = dependencyResolver.ResolveType<IDITestClass>();
             DITestClass diTestClass = (DITestClass)x;
 
             // Assert
             Assert.Pass();
         }
+
+
 
         [SetUp]
         public void Setup()

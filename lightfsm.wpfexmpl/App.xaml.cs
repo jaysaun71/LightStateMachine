@@ -24,7 +24,8 @@
         {
             // state machine init
             var stateConfig = new ViewsStateConfiguration();
-            DependencyResolver.RegisterType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>(() =>
+            var DependencyResovler = new DependencyResolver();
+            DependencyResovler.RegisterType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>(() =>
             {
                 return new StateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>(
                     stateConfig.GetConfiguration(),

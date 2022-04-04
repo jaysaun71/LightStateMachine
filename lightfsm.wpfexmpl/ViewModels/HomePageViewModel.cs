@@ -19,7 +19,7 @@
         public ICommand GoToPreviousCommand { get; private set; }
 
         private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager;
-        public HomePageViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
+        public HomePageViewModel() : this(new DependencyResolver().ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
             this.ShowAppPageCommand = new DelegateCommand(x => this.ShowAppPage());
             this.ShowSettingsPageCommand = new DelegateCommand(x => this.ShowSettingsPage());

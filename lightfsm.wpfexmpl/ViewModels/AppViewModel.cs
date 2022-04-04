@@ -19,7 +19,7 @@ namespace Core.Lightfsm.Wpfexmpl.ViewModels
 
         private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager;
 
-        public AppViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
+        public AppViewModel() : this(new DependencyResolver().ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
             // bind methods from fsm to views
             // add go to exact state method in fsm

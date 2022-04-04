@@ -16,7 +16,7 @@ namespace Core.Lightfsm.Wpfexmpl.ViewModels
         public ICommand GoToPreviousCommand { get; private set; }
 
         private readonly IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload> stateMachineManager;
-        public SettingsPageViewModel() : this(DependencyResolver.ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
+        public SettingsPageViewModel() : this(new DependencyResolver().ResolveType<IStateMachineManager<ApplicationViewsStateEnum, IViewStatePayload>>())
         {
             this.ShowHomePageCommand = new DelegateCommand(x => this.ShowHomePage());
             this.ShowAppPageCommand = new DelegateCommand(x => this.ShowAppPage());
