@@ -1,4 +1,4 @@
-﻿namespace Core.Lightfsm.Classes.DIContainer
+﻿namespace Core.Lightfsm.Impl.DIContainer
 {
     using System;
     using System.Collections.Generic;

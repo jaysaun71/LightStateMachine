@@ -3,7 +3,7 @@ using NUnit.Framework;
 namespace Core.Lightfsm.UnitTests
 {
     using Classes;
-    using Lightfsm.Classes.DIContainer;
+    using Impl.DIContainer;
 
     public class DIContainerTests
     {

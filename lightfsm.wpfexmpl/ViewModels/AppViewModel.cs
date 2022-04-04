@@ -1,11 +1,10 @@
-﻿using Core.Lightfsm.Classes.DIContainer;
-
-namespace Core.Lightfsm.Wpfexmpl.ViewModels
+﻿namespace Core.Lightfsm.Wpfexmpl.ViewModels
 {
     using Interfaces;
     using Lightfsm.Wpfexmpl.Classes;
     using System;
     using System.Windows.Input;
+    using Impl.DIContainer;
 
     internal class AppViewModel : ViewModelBase
     {

@@ -6,7 +6,7 @@ namespace Core.Lightfsm.Wpfexmpl.ViewModels
     using Lightfsm.Wpfexmpl.Classes;
     using System;
     using System.Windows.Input;
-    using Lightfsm.Classes.DIContainer;
+    using Impl.DIContainer;
 
     internal class SettingsPageViewModel : ViewModelBase
     {

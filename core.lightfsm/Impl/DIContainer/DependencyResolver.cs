@@ -1,14 +1,9 @@
-﻿namespace Core.Lightfsm.Classes.DIContainer
+﻿namespace Core.Lightfsm.Impl.DIContainer
 {
 
     /// DIContiner let us to use user defined dynamic and built-in resolver methods
     using System;
-    using System.Collections;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Diagnostics.Contracts;
-    using System.Dynamic;
-    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// Class provide functionality to register and resolving the type with its dependencies.

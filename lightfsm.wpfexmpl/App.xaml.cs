@@ -5,10 +5,9 @@
 
     using Core.Lightfsm.Wpfexmpl.Classes;
     using Core.Lightfsm.Wpfexmpl.Classes.DataContext;
-    using Lightfsm.Classes.DIContainer;
-
     using Core.Lightfsm.Interfaces;
     using Core.Lightfsm.Impl;
+    using Impl.DIContainer;
 
     /// <summary>
     /// Interaction logic for App.xaml

@@ -1,6 +1,5 @@
 ﻿namespace Core.Lightfsm.Wpfexmpl.ViewModels
 {
-    using Lightfsm.Classes.DIContainer;
     using Interfaces;
     using Lightfsm.Wpfexmpl;
     using Lightfsm.Wpfexmpl.Classes;
@@ -10,6 +9,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Input;
+    using Impl.DIContainer;
 
     internal class HomePageViewModel : ViewModelBase
     {
